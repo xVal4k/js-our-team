@@ -11,7 +11,6 @@ addBtn.addEventListener('click', function() {
     let inputRole = userRole.value;
     let inputImg = userImg.value;
 
-    console.log(inputName, inputRole, inputImg);
 
     var user = {};
     user.name = inputName;
@@ -19,11 +18,10 @@ addBtn.addEventListener('click', function() {
     user.image = inputImg;
     users.push(user);
 
-    console.log(users);
 
+    let teamCard = document.createElement("div");
     for (let i = 0; i < users.length; i++) { 
 
-        let teamCard = document.createElement("div");
         teamCard.classList.add("team-card")
         teamCard.innerHTML = 
         `<div class="card-image"><img
@@ -36,13 +34,11 @@ addBtn.addEventListener('click', function() {
             <p>${users[i].role}</p>
         </div>`;
 
-        console.log(users[i]);
     
-        teamContainer.append(teamCard);
     }
-
+    
+    teamContainer.append(teamCard);
 });
 
 
-// ogni volta che clicco le cose messe dentro l'input vadano aggiunte al obj dentro array
 
