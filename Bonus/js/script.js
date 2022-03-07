@@ -17,7 +17,7 @@ addBtn.addEventListener('click', function() {
     user.name = inputName;
     user.role = inputRole;
     user.image = inputImg;
-    users.push({user: user});
+    users.push(user);
 
     console.log(users);
 
@@ -25,8 +25,8 @@ addBtn.addEventListener('click', function() {
 
         let teamCard = document.createElement("div");
         teamCard.classList.add("team-card")
-        teamCard.innerHTML =`<div class="card-image">
-            <img
+        teamCard.innerHTML = 
+        `<div class="card-image"><img
               src="${users[i].image}"
               alt="${users[i].name}"
             />
@@ -35,6 +35,8 @@ addBtn.addEventListener('click', function() {
             <h3>${users[i].name}</h3>
             <p>${users[i].role}</p>
         </div>`;
+
+        console.log(users[i]);
     
         teamContainer.append(teamCard);
     }
